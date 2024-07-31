@@ -45,7 +45,7 @@ public class OrderService {
                 customer.getOrders().remove(order);
             }
             orderRepository.save(order);
-            kafkaProducerService.sendMessage(customer);
+            kafkaProducerService.sendMessage(customer); // send to kafka
         } else if ("test".equals(env)) {
             System.out.println("Processing order in TEST environment");
             order.setStatus(orderStatus);
@@ -53,7 +53,7 @@ public class OrderService {
                 customer.getOrders().removeIf(o -> o.getId().equals(order.getId()));
             }
             orderRepository.save(order);
-            kafkaProducerServiceMock.sendMessage(customer);
+            kafkaProducerServiceMock.sendMessage(customer); // send to mock queue
         } else {
             System.out.println("Skipping logic for other environment");
         }
@@ -71,6 +71,7 @@ public class OrderService {
         Customer customer = customerRepository.findById(customerId)
                 .orElseThrow(() -> new RuntimeException("Customer not found"));
 
+        // remove duplicates
         deleteDuplicates(orderIdSet);
 
         for (Long orderId : orderIdSet) {
