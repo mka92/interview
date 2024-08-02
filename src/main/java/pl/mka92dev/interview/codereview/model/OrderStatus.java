@@ -1,4 +1,4 @@
-package pl.mka92dev.interview.model;
+package pl.mka92dev.interview.codereview.model;
 
 public enum OrderStatus {
     CREATED,

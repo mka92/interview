@@ -1,7 +1,7 @@
-package pl.mka92dev.interview.kafka;
+package pl.mka92dev.interview.codereview.service;
 
 import org.springframework.stereotype.Service;
-import pl.mka92dev.interview.model.Customer;
+import pl.mka92dev.interview.codereview.model.Customer;
 
 @Service
 public class KafkaProducerService {

@@ -1,15 +1,13 @@
-package pl.mka92dev.interview.service;
+package pl.mka92dev.interview.codereview.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
-import pl.mka92dev.interview.model.Customer;
-import pl.mka92dev.interview.model.Order;
-import pl.mka92dev.interview.model.OrderStatus;
-import pl.mka92dev.interview.repository.CustomerRepository;
-import pl.mka92dev.interview.repository.OrderRepository;
-import pl.mka92dev.interview.kafka.KafkaProducerService;
-import pl.mka92dev.interview.kafka.KafkaProducerServiceMock;
+import pl.mka92dev.interview.codereview.model.OrderStatus;
+import pl.mka92dev.interview.codereview.model.Customer;
+import pl.mka92dev.interview.codereview.model.Order;
+import pl.mka92dev.interview.codereview.repository.CustomerRepository;
+import pl.mka92dev.interview.codereview.repository.OrderRepository;
 
 import java.util.List;
 import java.util.Set;

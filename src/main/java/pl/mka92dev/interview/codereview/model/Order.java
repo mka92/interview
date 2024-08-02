@@ -1,4 +1,4 @@
-package pl.mka92dev.interview.model;
+package pl.mka92dev.interview.codereview.model;
 
 import jakarta.persistence.*;
 
